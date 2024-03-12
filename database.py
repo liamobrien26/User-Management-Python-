@@ -1,18 +1,16 @@
+from Account import User, Admin
+
 class Database:
     def __init__(self):
-        # Initialize an empty dictionary to store user information
         self.users = {
-            "LiamOBrien": {"password": "Python11", "name": "Liam O'Brien", "date_of_birth": "01/01/1988",
-                           "employee_num": "00001", "phone": "077330234"},
+            "LiamOBrien": User("Python11", "Liam O'Brien", "01/01/1988", "00001", "077330234"),
 
-            "CiaranOBrien": {"password": "Python12", "name": "Ciaran O'Brien", "date_of_birth": "05/05/1976",
-                             "employee_num": "00002", "phone": "077234235"},
+            "CiaranOBrien": User("Python12", "Ciaran O'Brien", "05/05/1976", "00002", "077234235"),
 
-            "SineadOBrien": {"password": "Python13", "name": "Sinead O'Brien", "date_of_birth": "11/10/1966",
-                             "employee_num": "00003", "phone": "077125452"}
+            "SineadOBrien": User("Python13", "Sinead O'Brien", "11/10/1966", "00003", "077125452")
         }
         self.admin = {
-            "Admin69": {"password": "CSharpisbetter", "name": "Bill Gates", "date_of_birth": "1970-01-01"}
+            "Admin100": Admin("SixApples6", "Bill Gates", "1970-01-01")
         }
 
     def add_user(self, username, password, is_admin=False):
