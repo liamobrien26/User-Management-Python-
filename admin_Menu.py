@@ -15,20 +15,23 @@ def AdminMenu(database, company_login_user):
     if optionAdmin == 1:  # View all profiles
         os.system('clear')
         print("\n--- All Employee Profiles ---\n\n")
-
-        
+        for user in database.users.values():
+            user.show_user()
        
-    if optionAdmin == 2: #Select individual profile
+        if : #Select individual profile
+        print("Select option: ")
         print("Please select which employee profile you wish to see")
         # Initialize an empty list to store names
         user_names = []
-
         # Iterate through the keys in the database.users dictionary and append the 'name' attribute to the list
         for username, user_info in database.users.items():
             user_names.append(user_info['name'])
-
         # Print the list of names
         print(user_names)
+
+    elif optionAdmin == 2:
+
+    elif optionAdmin == 3:
 
     else:
         print("Invalid option selected.")

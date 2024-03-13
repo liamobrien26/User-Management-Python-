@@ -52,16 +52,12 @@ my_database = Database()
 # Call the Login function with the created database
 logged_in_user = Login(my_database)
 
-# Create an instance of the Database class
-user_database = Database()
-
 # Call the register_user function with the database instance
 # register_user(user_database)
 
 if (isinstance(logged_in_user, Admin)):
     AdminMenu(my_database,logged_in_user)
 else:
-    UserAccounts(logged_in_user)  # declares the function for users
+    UserAccounts(my_database, logged_in_user)  # declares the function for users
 
-"""Print the updated user database
-print("Updated User Database:", user_database.users)"""
+# print("Updated User Database:", my_database.users)

@@ -3,14 +3,14 @@ from Account import User, Admin
 class Database:
     def __init__(self):
         self.users = {
-            "LiamOBrien": User("Python11", "Liam O'Brien", "01/01/1988", "00001", "077330234"),
+            "LiamOBrien": User("LiamOBrien", "Python11", "Liam O'Brien", "01/01/1988", "00001", "077330234"),
 
-            "CiaranOBrien": User("Python12", "Ciaran O'Brien", "05/05/1976", "00002", "077234235"),
+            "CiaranOBrien": User("CiaranOBrien", "Python12", "Ciaran O'Brien", "05/05/1976", "00002", "077234235"),
 
-            "SineadOBrien": User("Python13", "Sinead O'Brien", "11/10/1966", "00003", "077125452")
+            "SineadOBrien": User("SineadOBrien", "Python13", "Sinead O'Brien", "11/10/1966", "00003", "077125452")
         }
         self.admin = {
-            "Admin100": Admin("SixApples6", "Bill Gates", "1970-01-01")
+            "Admin100": Admin("Admin100", "SixApples6", "Bill Gates", "1970-01-01")
         }
 
     def add_user(self, username, password, is_admin=False):

@@ -1,12 +1,11 @@
 import os
-from database import Database
 from Account import User, Admin, Accounts
 from datetime import datetime
 import time
 
 
 #Page for USERS
-def UserAccounts(company_login_user): 
+def UserAccounts(my_database, company_login_user): 
 
     print("----- Welcome", company_login_user.name, " -----") #Display welcome sign and name
 
@@ -58,14 +57,18 @@ def UserAccounts(company_login_user):
                   f"Your phone number has been successfully changed.\nPress Enter to continue.")
 
 
-        # elif optionEdit == 4:  # Change Username
-        #     os.system('clear')
-        #     print(f"Username: {company_login_user.self}")
-        #     user_name = input("Please enter the username you wish to set: ")
-        #     company_login_user.self = user_name
-        #     os.system('clear')
-        #     print(f"Updated username: {company_login_user.self}\n"
-        #           f"Your username has been successfully changed.\nPress Enter to continue.")
+        elif optionEdit == 4:  # Change Username
+            os.system('clear')
+            print(f"Username: {company_login_user.username}")
+            user_name = input("Please enter the username you wish to set: ")
+
+            amended_user = my_database.users.pop(company_login_user.username)
+            amended_user.username = user_name #Update username in values (dictionary)
+            my_database.users[user_name] = amended_user
+
+            os.system('clear')
+            print(f"Updated username: {company_login_user.username}\n"
+                  f"Your username has been successfully changed.\nPress Enter to continue.")
 
         elif optionEdit == 5:  # Change password
             os.system('clear')
